@@ -7,7 +7,7 @@ create-project:
 	touch ./docker/php/bash/.bash_history
 	@make build
 	@make up
-	docker-compose exec app composer create-project --prefer-dist laravel/laravel .
+	docker-compose run --rm composer create-project laravel/laravel .
 	@make init
 init:
 	mkdir -p ./docker/php/bash/psysh
